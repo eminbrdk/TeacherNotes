@@ -44,10 +44,9 @@ class NotesVC: UIViewController {
     
     func addAlert() {
         let point = buttonType == .plus ? 1 : -1
-        let message = buttonType == .plus ? "plus" : "minus"
         let title = buttonType == .plus ? "Plus" : "Minus"
         
-        let alert = UIAlertController(title: "\(title) Note", message: "Add new \(message) note to \(student.name!)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "\(title) Note", message: "Add new \(title.lowercased()) note to \(student.name!)", preferredStyle: .alert)
         alert.addTextField()
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak self] _ in
             guard let self else { return }
